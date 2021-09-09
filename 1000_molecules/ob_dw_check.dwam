@@ -1,0 +1,29 @@
+<macro name="ob_dw_check">
+<task name="addSmilesCodes">
+columnName0=dwSmiles
+structureColumn=Structure of obSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_smiles
+isOverwrite=false
+formula=str(obSMILES) == str(dwSmiles)
+</task>
+<task name="addInChI">
+columnName0=dwInChI
+structureColumn=Structure of obSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_InChi
+isOverwrite=false
+formula=str(obInChi) == str(dwInChI)
+</task>
+<task name="addInChIKey">
+columnName0=dwInChI-Key
+structureColumn=Structure of obSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_InChiKey
+isOverwrite=false
+formula=str(obInChiKey) == str(dwInChIKey)
+</task>
+</macro>

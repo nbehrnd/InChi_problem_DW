@@ -1,0 +1,191 @@
+# name:   report_1000.org
+# author: nbehrnd@yahoo.com
+# date:   2021-09-09 (YYYY-MM-DD)
+
+* Motivation
+
+  The disagreement between OpenBabel and RDKit on one hand, and DataWarrior on
+  the other hand, about the InChiKeys assigned to the structures need not be a
+  disagreement on the level where these are hashed from the intermediate InChi.
+  Instead, there already could be differences assigning the InChi.  A previous
+  run with a set with 250 molecules could be to small to provide a reasonable
+  picture.
+
+  Again, the Python interface to OpenBabel (version 3.1.1, as provided in the
+  repositories of Debian 12/bookworm, branch testing) is used for an inspection.
+  Scripts used are written for and used from the CLI of standard CPython
+  (version 3.9.2 as installed from Debian's repositories).
+  
+* Test run (n = 1k)
+
+** preparation 
+
+   With DataWarrior's default settings, a random library of 1000 molecules was
+   generated (file =Random_Molecules_1000.dwar=).  These were exported directly
+   into a structure file (file =Random_Molecules_1000.sdf=).
+
+   Script =obabel_inchi.py= was used to read DataWarrior's =.sdf= to count the
+   chiral atoms, double bonds unrelated to cycles and to assign SMILES, InChi,
+   and InChiKeys.  The script wrote file =analysis.txt= as permanent record with
+   column headers obstereo, obEZ, obSMILES, obInChi, and obInChiKey
+   respectively.  To ease interaction with DataWarrior, the tables were
+   separated by tabulators.
+
+   The content of file =analysis.txt= was pasted into a pristine running
+   instance of DataWarrior including the header line.  DataWarrior macro
+   =ob_dw_check.dwam= was imported and run to
+   + assign SMILES, Inchi, and InChiKey by DataWarrior based on OpenBabel's
+     SMILES
+   + to compare e.g., obSMILES (SMILES by OpenBabel) with dwSMILES (SMILES by
+     DW) as strings.  The Boolean relation =str(obSMILES) == str(dwSMILES)=
+     either yields =1= (one) if these strings match each other, or =0= (zero) if
+     the strings compared with each other are different.
+   The results were saved in file =Random_Molecules_1000_check.dwar=.  The sort
+   of the entries (e.g., number of stereogenic centers (=obstereo=) as first,
+   the number of exocyclic double bonds (=obEZ=) as second criterion), again
+   supports the hypothesis of identical InChi assigned by OpenBabel and DW for
+   all compounds lacking a stereogenic center and an exocyclic double bond.
+
+   Note the advantage of this .dwar file to narrow down interactively the
+   molecules of interest with the slide rules (e.g., number of double bonds,
+   chiral centers, level of the Boolean comparisons).
+
+   It equally is possible to sort the entries for similarity/dissimilarity of
+   the SMILES strings (column =diff_smiles=).  Since the same structure may be
+   expressed differently (e.g., =c1ccncc1= and =c1ccccn1= both about pyridine),
+   this criterion however is not pursued further.
+
+   The content of =Random_Molecules_1000_check.dwar= was exported as text (File
+   -> Save Special -> Textfile) as file =Random_Molecules_1000_check.txt=.
+   Python script =table_stat.py= was used to group the molecules by number of
+   stereogenic centers, number of exocyclic double bonds and if the strings of
+   the InChi assigned by OpenBabel and DW match (=1=) or not (=0=).  With file
+   =frequency_List.txt=, the script generated a permanent record.
+
+   This frequency count is the basis for the following table.
+
+   #+NAME:  tab_Random_Molecules_1000
+   |---------------+---------------+------------------+-----+--------------|
+   | molecule type | InChi (match) | InChi (no match) | sum | rel. correct |
+   | (stereo, EZ)  |               |                  |     | [in percent] |
+   |---------------+---------------+------------------+-----+--------------|
+   | 0 0           |           341 |                0 | 341 |       100.00 |
+   | 0 1           |            20 |               79 |  99 |        20.20 |
+   | 0 2           |             0 |               38 |  38 |         0.00 |
+   | 0 3           |             0 |                6 |   6 |         0.00 |
+   | 0 4           |             0 |                2 |   2 |         0.00 |
+   | 1 0           |           190 |               15 | 205 |        92.68 |
+   | 1 1           |            12 |               57 |  69 |        17.39 |
+   | 1 2           |             0 |               21 |  21 |         0.00 |
+   | 1 3           |             0 |                3 |   3 |         0.00 |
+   | 1 4           |             0 |                2 |   2 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 2 0           |            64 |               32 |  96 |        66.67 |
+   | 2 1           |             3 |               33 |  36 |         8.33 |
+   | 2 2           |             0 |                4 |   4 |         0.00 |
+   | 2 3           |             0 |                1 |   1 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 3 0           |            18 |               20 |  38 |        47.37 |
+   | 3 1           |             1 |                8 |   9 |        11.11 |
+   | 3 2           |             0 |                2 |   2 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 4 0           |             6 |               11 |  17 |        35.29 |
+   | 4 1           |             0 |                5 |   5 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 5 0           |             1 |                2 |   3 |        33.33 |
+   | 5 1           |             0 |                1 |   1 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 6 1           |             0 |                1 |   1 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+   | 7 0           |             0 |                1 |   1 |         0.00 |
+   |---------------+---------------+------------------+-----+--------------|
+ #+TBLFM: $4=$2 + $3::$5=($2/$4)*100;%.2f
+
+** Conclusion
+
+   Except for molecules lacking stereogenic centers and exocyclic double bonds,
+   apparently, there are differences in the assignment of InChi by current
+   OpenBabel (version 3.1.1) and DataWarrior (development version for Mac/Linux,
+   fetched by <2021-09-07 Tue>).
+
+   The limited compilation is interpreted as if the presence of exocyclic double
+   bonds were of stronger influence than the presence of chiral centers to
+   reduce the probability of a matching InChi by both generators.
+   
+* Test run (n = 5k)
+
+  This test departed from a random library of 5000 molecules deposit in file
+  =Random_Molecules_5k.dwar=.  The data were processed as in the previous test
+  with 1k of molecules.
+
+     #+NAME:  tab_Random_Molecules_5k
+   |---------------+---------------+------------------+------+--------------|
+   | molecule type | InChi (match) | InChi (no match) |  sum | rel. correct |
+   | (stereo, EZ)  |               |                  |      | [in percent] |
+   |---------------+---------------+------------------+------+--------------|
+   | 0 0           |          1846 |                0 | 1846 |       100.00 |
+   | 0 1           |            87 |              465 |  552 |        15.76 |
+   | 0 2           |             0 |              158 |  158 |         0.00 |
+   | 0 3           |             0 |               30 |   30 |         0.00 |
+   | 0 4           |             0 |                3 |    3 |         0.00 |
+   | 0 5           |             0 |                2 |    2 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 1 0           |           867 |               61 |  928 |        93.43 |
+   | 1 1           |            65 |              258 |  323 |        20.12 |
+   | 1 2           |             0 |               88 |   88 |         0.00 |
+   | 1 3           |             0 |               20 |   20 |         0.00 |
+   | 1 4           |             0 |                7 |    7 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 2 0           |           362 |              134 |  496 |        72.98 |
+   | 2 1           |            20 |              128 |  148 |        13.51 |
+   | 2 2           |             1 |               24 |   25 |         4.00 |
+   | 2 3           |             0 |                9 |    9 |         0.00 |
+   | 2 4           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 3 0           |           104 |               70 |  174 |        59.77 |
+   | 3 1           |             7 |               42 |   49 |        14.29 |
+   | 3 2           |             1 |                7 |    8 |        12.50 |
+   | 3 3           |             0 |                1 |    1 |         0.00 |
+   | 3 4           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 4 0           |            17 |               48 |   65 |        26.15 |
+   | 4 1           |             0 |               19 |   19 |         0.00 |
+   | 4 2           |             0 |                3 |    3 |         0.00 |
+   | 4 3           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 5 0           |             2 |               25 |   27 |         7.41 |
+   | 5 1           |             2 |                2 |    4 |        50.00 |
+   | 5 2           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 6 0           |             0 |                6 |    6 |         0.00 |
+   | 6 1           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 7 1           |             0 |                2 |    2 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 8 0           |             0 |                1 |    1 |         0.00 |
+   |---------------+---------------+------------------+------+--------------|
+   | 11 1          |             0 |                1 |    1 |         0.00 |
+ #+TBLFM: $4=$2 + $3::$5=($2/$4)*100;%.2f
+
+     The InChi assigned by DataWarrior and OpenBabel match each other for all of
+     1864 molecules lacking a stereogenic center and exocyclic double bond.  For
+     molecules belonging to any other class, the propability that the two
+     generators assign different InChi (and consequently, a different InChiKey)
+     is considerably larger.
+
+
+* Single molecule
+
+  In a pristine instance of DW, one early entry of the set of 1000 molecules
+  known to be assinged different InChi by OpenBabel and DataWarrior is entered
+  with the sketcher (file =single.dwar=).  It is a compound with one stereogenic
+  center only (assigned as /S/) for which DW is again queried to assign an InChi
+  (which is
+  InChI=1S/C14H12O9/c1-2-6(17)23-13-8-7(4(15)3-5(16)10(8)18)11(19)9(12(13)20)14(21)22/h3,13,15-16,18,20H,2H2,1H3,(H,21,22)/t13-/m1/s1)
+
+  The InChi is copy-pasted into the mask of the Chemical Identity Resolver of
+  NIH' Cactus server (https://cactus.nci.nih.gov/chemical/structure). The visual
+  representation however plots the enantiomer (explicitly assigned /R/). (URL
+  assigned: https://cactus.nci.nih.gov/chemical/structure/InChI=1S/C14H12O9/c1-2-6(17)23-13-8-7(4(15)3-5(16)10(8)18)11(19)9(12(13)20)14(21)22/h3,13,15-16,18,20H,2H2,1H3,(H,21,22)/t13-/m1/s1/image)
+  
+     
