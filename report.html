@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-09-13 Mon 09:32 -->
+<!-- 2021-09-17 Fri 10:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -222,22 +222,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org15bb456">1. Motivation</a></li>
-<li><a href="#org64e80f9">2. Test run (n = 1k), OpenBabel</a>
+<li><a href="#org79899dc">1. Motivation</a></li>
+<li><a href="#orgb7fbee0">2. Test run (n = 1k), OpenBabel</a>
 <ul>
-<li><a href="#orga46c178">2.1. preparation</a></li>
-<li><a href="#orgb5366a7">2.2. Conclusion</a></li>
+<li><a href="#orgeb56122">2.1. preparation</a></li>
+<li><a href="#org423bc5c">2.2. Conclusion</a></li>
 </ul>
 </li>
-<li><a href="#orgf7f4aa3">3. Test run (n = 5k), OpenBabel</a></li>
-<li><a href="#org626d9b6">4. Test run, (n = 1k), RDKit</a></li>
-<li><a href="#org78cb12c">5. Test run, (n = 5k), RDKit</a></li>
-<li><a href="#org2ee6628">6. Single molecule</a></li>
+<li><a href="#orgaae61ce">3. Test run (n = 5k), OpenBabel</a></li>
+<li><a href="#org36cf364">4. Test run, (n = 1k), RDKit</a></li>
+<li><a href="#org03f9cec">5. Test run, (n = 5k), RDKit</a></li>
+<li><a href="#org50cb3e2">6. Single molecule</a></li>
+<li><a href="#org9c62286">7. Cross-check InChI trust reference</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org15bb456" class="outline-2">
-<h2 id="org15bb456"><span class="section-number-2">1.</span> Motivation</h2>
+<div id="outline-container-org79899dc" class="outline-2">
+<h2 id="org79899dc"><span class="section-number-2">1.</span> Motivation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The disagreement between OpenBabel and RDKit on one hand, and DataWarrior on
@@ -257,12 +258,12 @@ Scripts used are written for and used from the CLI of standard CPython
 </div>
 </div>
 
-<div id="outline-container-org64e80f9" class="outline-2">
-<h2 id="org64e80f9"><span class="section-number-2">2.</span> Test run (n = 1k), OpenBabel</h2>
+<div id="outline-container-orgb7fbee0" class="outline-2">
+<h2 id="orgb7fbee0"><span class="section-number-2">2.</span> Test run (n = 1k), OpenBabel</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga46c178" class="outline-3">
-<h3 id="orga46c178"><span class="section-number-3">2.1.</span> preparation</h3>
+<div id="outline-container-orgeb56122" class="outline-3">
+<h3 id="orgeb56122"><span class="section-number-3">2.1.</span> preparation</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 With DataWarrior's default settings, a random library of 1000 molecules was
@@ -326,7 +327,7 @@ the InChi assigned by OpenBabel and DW match (<code>1</code>) or not (<code>0</c
 This frequency count is the basis for the following table.
 </p>
 
-<table id="orgb18bc35" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgdeb9a2a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -552,8 +553,8 @@ This frequency count is the basis for the following table.
 </div>
 </div>
 
-<div id="outline-container-orgb5366a7" class="outline-3">
-<h3 id="orgb5366a7"><span class="section-number-3">2.2.</span> Conclusion</h3>
+<div id="outline-container-org423bc5c" class="outline-3">
+<h3 id="org423bc5c"><span class="section-number-3">2.2.</span> Conclusion</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Except for molecules lacking stereogenic centers and exocyclic double bonds,
@@ -571,8 +572,8 @@ reduce the probability of a matching InChi by both generators.
 </div>
 </div>
 
-<div id="outline-container-orgf7f4aa3" class="outline-2">
-<h2 id="orgf7f4aa3"><span class="section-number-2">3.</span> Test run (n = 5k), OpenBabel</h2>
+<div id="outline-container-orgaae61ce" class="outline-2">
+<h2 id="orgaae61ce"><span class="section-number-2">3.</span> Test run (n = 5k), OpenBabel</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This test departed from a random library of 5000 molecules deposit in file
@@ -580,7 +581,7 @@ This test departed from a random library of 5000 molecules deposit in file
 with 1k of molecules.
 </p>
 
-<table id="orgfd80f75" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgede719a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -897,8 +898,8 @@ is considerably larger.
 </div>
 </div>
 
-<div id="outline-container-org626d9b6" class="outline-2">
-<h2 id="org626d9b6"><span class="section-number-2">4.</span> Test run, (n = 1k), RDKit</h2>
+<div id="outline-container-org36cf364" class="outline-2">
+<h2 id="org36cf364"><span class="section-number-2">4.</span> Test run, (n = 1k), RDKit</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 For the purpose of comparison, the scrutiny was repeated with the currently
@@ -925,7 +926,7 @@ branch OpenBabel, script <code>table_stat.py</code> was used again to yield a su
 file <code>frequency_list.txt</code>.
 </p>
 
-<table id="org2aca875" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org3e3e83d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1158,15 +1159,15 @@ other in absence of stereogenic centers and E/Z double bonds.
 </div>
 
 
-<div id="outline-container-org78cb12c" class="outline-2">
-<h2 id="org78cb12c"><span class="section-number-2">5.</span> Test run, (n = 5k), RDKit</h2>
+<div id="outline-container-org03f9cec" class="outline-2">
+<h2 id="org03f9cec"><span class="section-number-2">5.</span> Test run, (n = 5k), RDKit</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 The library of 5k drug like molecules, submitted to the scrutiny as .sdf by
 RDKit.
 </p>
 
-<table id="org0891724" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8d181ce" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1482,8 +1483,8 @@ over the total of all molecules submitted is higher than in the earlier run (n
 </div>
 </div>
 
-<div id="outline-container-org2ee6628" class="outline-2">
-<h2 id="org2ee6628"><span class="section-number-2">6.</span> Single molecule</h2>
+<div id="outline-container-org50cb3e2" class="outline-2">
+<h2 id="org50cb3e2"><span class="section-number-2">6.</span> Single molecule</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 In a pristine instance of DW, one early entry of the set of 1000 molecules
@@ -1502,10 +1503,188 @@ assigned: <a href="https://cactus.nci.nih.gov/chemical/structure/InChI=1S/C14H12
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-org9c62286" class="outline-2">
+<h2 id="org9c62286"><span class="section-number-2">7.</span> Cross-check InChI trust reference</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+For the assignment of molecular structures encoded as a <code>.sdf</code>, the InChI
+trust distributes the reference implemention for the assignment of InChI and
+InChIKeys as a compiled executable, e.g., for Linux.  Both test sets of 1k and
+5k molecules were submitted to this assignment.
+</p>
+
+<table id="org82c9093" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior <i>vs.</i> InChI; 1k set.</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right"><code>diff_stereo_ob_rd</code></th>
+<th scope="col" class="org-right"><code>diff_ez_ob_rd</code></th>
+<th scope="col" class="org-right"><code>diff_structure_ob_rd</code></th>
+<th scope="col" class="org-right"><code>inchi_ob_vs_inchi</code></th>
+<th scope="col" class="org-right"><code>inchi_rd_vs_inchi</code></th>
+<th scope="col" class="org-right"><code>inchi_dw_vs_inchi</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">count (match):</td>
+<td class="org-right">999</td>
+<td class="org-right">486</td>
+<td class="org-right">981</td>
+<td class="org-right">983</td>
+<td class="org-right">1000</td>
+<td class="org-right">666</td>
+</tr>
+
+<tr>
+<td class="org-left">count (differ):</td>
+<td class="org-right">1</td>
+<td class="org-right">514</td>
+<td class="org-right">19</td>
+<td class="org-right">17</td>
+<td class="org-right">0</td>
+<td class="org-right">334</td>
+</tr>
+
+<tr>
+<td class="org-left">sum (match+differ):</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+</tr>
+
+<tr>
+<td class="org-left">difference [%]</td>
+<td class="org-right">0.10</td>
+<td class="org-right">51.40</td>
+<td class="org-right">1.90</td>
+<td class="org-right">1.70</td>
+<td class="org-right">0.00</td>
+<td class="org-right">33.40</td>
+</tr>
+</tbody>
+</table>
+
+
+<table id="orgc1563b4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior <i>vs.</i> InChI; 5k set.</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right"><code>diff_stereo_ob_rd</code></th>
+<th scope="col" class="org-right"><code>diff_ez_ob_rd</code></th>
+<th scope="col" class="org-right"><code>diff_structure_ob_rd</code></th>
+<th scope="col" class="org-right"><code>inchi_ob_vs_inchi</code></th>
+<th scope="col" class="org-right"><code>inchi_rd_vs_inchi</code></th>
+<th scope="col" class="org-right"><code>inchi_dw_vs_inchi</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">count (match):</td>
+<td class="org-right">4999</td>
+<td class="org-right">2591</td>
+<td class="org-right">4861</td>
+<td class="org-right">4866</td>
+<td class="org-right">4998</td>
+<td class="org-right">3444</td>
+</tr>
+
+<tr>
+<td class="org-left">count (differ):</td>
+<td class="org-right">1</td>
+<td class="org-right">2409</td>
+<td class="org-right">139</td>
+<td class="org-right">134</td>
+<td class="org-right">2</td>
+<td class="org-right">1556</td>
+</tr>
+
+<tr>
+<td class="org-left">sum (match+differ):</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+</tr>
+
+<tr>
+<td class="org-left">difference [%]</td>
+<td class="org-right">0.02</td>
+<td class="org-right">48.18</td>
+<td class="org-right">2.78</td>
+<td class="org-right">2.68</td>
+<td class="org-right">0.04</td>
+<td class="org-right">31.12</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Lessons learnt:
+</p>
+<ul class="org-ul">
+<li>Possibly, the moderator script for RDKit does not identify between well
+enough between double bonds not attached to/included in a cyclic system.</li>
+<li>Either OpenBabel/RDKit interpret <code>.sdf</code> differently, or the SMILES assigned
+by them differs such that DataWarrior's structure codes occasionally change.
+This may, but need not be relevant how DataWarrior perceives the structures
+after importing their SMILES string in comparison to DataWarrior's direct
+import of .sdf files.</li>
+<li>Assuming the implementation by the InChI trust as reference (1.06, december
+2020), about one in three structures was assigned a different InChI by
+DataWarrior (development version, Mac/Linux, fetched September 7th).  The
+differences drop by about a factor of 10 using OpenBabel (3.1.1, 134 out of
+5k entries with different assigment), and again by a factor of about 50
+using the current version of RDKit (2021.03.5, 2 out of 5k entries with
+different assignment).</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: norwid</p>
-<p class="date">Created: 2021-09-13 Mon 09:32</p>
+<p class="date">Created: 2021-09-17 Fri 10:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

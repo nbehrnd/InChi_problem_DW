@@ -312,3 +312,46 @@
   assigned: https://cactus.nci.nih.gov/chemical/structure/InChI=1S/C14H12O9/c1-2-6(17)23-13-8-7(4(15)3-5(16)10(8)18)11(19)9(12(13)20)14(21)22/h3,13,15-16,18,20H,2H2,1H3,(H,21,22)/t13-/m1/s1/image)
   
      
+* Cross-check InChI trust reference
+
+  For the assignment of molecular structures encoded as a =.sdf=, the InChI
+  trust distributes the reference implemention for the assignment of InChI and
+  InChIKeys as a compiled executable, e.g., for Linux.  Both test sets of 1k and
+  5k molecules were submitted to this assignment.
+
+  #+NAME: tab_cross_check_1k
+  #+CAPTION: Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior /vs./ InChI; 1k set.
+  |                     | =diff_stereo_ob_rd= | =diff_ez_ob_rd= | =diff_structure_ob_rd= | =inchi_ob_vs_inchi= | =inchi_rd_vs_inchi= | =inchi_dw_vs_inchi= |
+  |---------------------+---------------------+-----------------+------------------------+---------------------+---------------------+---------------------|
+  | count (match):      |                 999 |             486 |                    981 |                 983 |                1000 |                 666 |
+  | count (differ):     |                   1 |             514 |                     19 |                  17 |                   0 |                 334 |
+  | sum (match+differ): |                1000 |            1000 |                   1000 |                1000 |                1000 |                1000 |
+  | difference [%]      |                0.10 |           51.40 |                   1.90 |                1.70 |                0.00 |               33.40 |
+  |---------------------+---------------------+-----------------+------------------------+---------------------+---------------------+---------------------|
+
+  
+  #+NAME: tab_cross_check_5k
+  #+CAPTION: Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior /vs./ InChI; 5k set.
+  |                     | =diff_stereo_ob_rd= | =diff_ez_ob_rd= | =diff_structure_ob_rd= | =inchi_ob_vs_inchi= | =inchi_rd_vs_inchi= | =inchi_dw_vs_inchi= |
+  |---------------------+---------------------+-----------------+------------------------+---------------------+---------------------+---------------------|
+  | count (match):      |                4999 |            2591 |                   4861 |                4866 |                4998 |                3444 |
+  | count (differ):     |                   1 |            2409 |                    139 |                 134 |                   2 |                1556 |
+  | sum (match+differ): |                5000 |            5000 |                   5000 |                5000 |                5000 |                5000 |
+  | difference [%]      |                0.02 |           48.18 |                   2.78 |                2.68 |                0.04 |               31.12 |
+  |---------------------+---------------------+-----------------+------------------------+---------------------+---------------------+---------------------|
+
+  Lessons learnt:
+  + Possibly, the moderator script for RDKit does not identify between well
+    enough between double bonds not attached to/included in a cyclic system.
+  + Either OpenBabel/RDKit interpret =.sdf= differently, or the SMILES assigned
+    by them differs such that DataWarrior's structure codes occasionally change.
+    This may, but need not be relevant how DataWarrior perceives the structures
+    after importing their SMILES string in comparison to DataWarrior's direct
+    import of .sdf files.
+  + Assuming the implementation by the InChI trust as reference (1.06, december
+    2020), about one in three structures was assigned a different InChI by
+    DataWarrior (development version, Mac/Linux, fetched September 7th).  The
+    differences drop by about a factor of 10 using OpenBabel (3.1.1, 134 out of
+    5k entries with different assigment), and again by a factor of about 50
+    using the current version of RDKit (2021.03.5, 2 out of 5k entries with
+    different assignment).
