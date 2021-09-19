@@ -1,0 +1,143 @@
+InChI version 1, Software v. 1.06 (inchi-1 executable) 
+Linux 64-bit Build (gcc 4.8.5 20150623 (Red Hat 4.8.5-39)) of Dec 19 2020 21:02:16
+
+Opened log file 'Random_Molecules_250.sdf.log'
+Opened input file 'Random_Molecules_250.sdf'
+Opened output file 'Random_Molecules_250.sdf.txt'
+Opened problem file 'Random_Molecules_250.sdf.prb'
+The command line used:
+"./inchi-1 Random_Molecules_250.sdf -AuxNone -Tabbed -Key"
+Generating standard InChI
+Generating standard InChIKey
+Input format: MOLfile
+Output format: Plain text, tabbed
+Aux. info suppressed
+Timeout per structure: 60000 msec
+Up to 1024 atoms per structure
+
+
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #6.
+Warning (Charges were rearranged) structure #8.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #9.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #12.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #14.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #17.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #21.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #23.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #26.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #27.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #28.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #29.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #33.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #35.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #38.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #42.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #43.
+Warning (Omitted undefined stereo) structure #45.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #47.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #48.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #50.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #53.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #54.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #58.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #60.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #61.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #63.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #64.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #66.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #68.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #69.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #71.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #72.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #73.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #80.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #81.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #82.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #83.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #86.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #87.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #88.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #89.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #96.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #97.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #102.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #105.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #107.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #108.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #109.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #110.
+Warning (Proton(s) added/removed) structure #111.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #112.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #119.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #120.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #121.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #122.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #126.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #127.
+Warning (Omitted undefined stereo) structure #128.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #131.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #133.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #136.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #137.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #140.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #141.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #142.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #143.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #144.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #146.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #148.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #149.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #151.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #152.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #153.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #154.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #155.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #156.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #157.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #163.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #167.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #169.
+Warning (Charges were rearranged) structure #169.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #172.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #173.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #175.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #178.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #179.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #180.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #181.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #182.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #190.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #192.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #194.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #197.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #199.
+Warning (Proton(s) added/removed) structure #200.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #201.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #202.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #206.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #208.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #210.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #211.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #212.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #218.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #219.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #220.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #221.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #222.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #224.
+Warning (Charges were rearranged) structure #225.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #226.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #227.
+Warning (Omitted undefined stereo) structure #232.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #233.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #235.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #236.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #242.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #245.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #246.
+Warning (Omitted undefined stereo) structure #247.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #248.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #249.
+Warning: (V3000 enhanced stereo read/stored but ignored) inp structure #250.
+End of file detected after structure #250.   
+Finished processing 250 structures: 0 errors, processing time 0:00:00.00
