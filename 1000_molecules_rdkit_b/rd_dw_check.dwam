@@ -1,0 +1,29 @@
+<macro name="rd_dw_check">
+<task name="addSmilesCodes">
+columnName0=dwSmiles
+structureColumn=Structure of rdSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_rd_dw_SMILES
+isOverwrite=false
+formula=str(rdSMILES) == str(dwSmiles)
+</task>
+<task name="addInChI">
+columnName0=dwInChI
+structureColumn=Structure of rdSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_rd_dw_inchi
+isOverwrite=false
+formula=str(rdInChI) == str(dwInChI)
+</task>
+<task name="addInChIKey">
+columnName0=dwInChI-Key
+structureColumn=Structure of rdSMILES
+</task>
+<task name="addCalculatedValues">
+columnName=diff_rd_dw_inchikey
+isOverwrite=false
+formula=str(rdInChIKey) == str(dwInChIKey)
+</task>
+</macro>

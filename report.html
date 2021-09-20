@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-09-17 Fri 10:10 -->
+<!-- 2021-09-20 Mon 16:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -222,23 +222,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org79899dc">1. Motivation</a></li>
-<li><a href="#orgb7fbee0">2. Test run (n = 1k), OpenBabel</a>
+<li><a href="#org44b9517">1. Motivation</a></li>
+<li><a href="#orgf8fe330">2. Test run (n = 1k), OpenBabel</a>
 <ul>
-<li><a href="#orgeb56122">2.1. preparation</a></li>
-<li><a href="#org423bc5c">2.2. Conclusion</a></li>
+<li><a href="#orgc6e7dc7">2.1. preparation</a></li>
+<li><a href="#org9149d2c">2.2. Conclusion</a></li>
 </ul>
 </li>
-<li><a href="#orgaae61ce">3. Test run (n = 5k), OpenBabel</a></li>
-<li><a href="#org36cf364">4. Test run, (n = 1k), RDKit</a></li>
-<li><a href="#org03f9cec">5. Test run, (n = 5k), RDKit</a></li>
-<li><a href="#org50cb3e2">6. Single molecule</a></li>
-<li><a href="#org9c62286">7. Cross-check InChI trust reference</a></li>
+<li><a href="#org76a35eb">3. Test run (n = 5k), OpenBabel</a></li>
+<li><a href="#org7934c20">4. Test run, (n = 1k), RDKit</a></li>
+<li><a href="#orge6f15a7">5. Test run, (n = 5k), RDKit</a></li>
+<li><a href="#orgfa8ad6e">6. Single molecule</a></li>
+<li><a href="#orge780ba7">7. Cross-check InChI trust reference</a></li>
+<li><a href="#orgc16b2b3">8. Cross-check with the InChI trust reference, b</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org79899dc" class="outline-2">
-<h2 id="org79899dc"><span class="section-number-2">1.</span> Motivation</h2>
+<div id="outline-container-org44b9517" class="outline-2">
+<h2 id="org44b9517"><span class="section-number-2">1.</span> Motivation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The disagreement between OpenBabel and RDKit on one hand, and DataWarrior on
@@ -258,12 +259,12 @@ Scripts used are written for and used from the CLI of standard CPython
 </div>
 </div>
 
-<div id="outline-container-orgb7fbee0" class="outline-2">
-<h2 id="orgb7fbee0"><span class="section-number-2">2.</span> Test run (n = 1k), OpenBabel</h2>
+<div id="outline-container-orgf8fe330" class="outline-2">
+<h2 id="orgf8fe330"><span class="section-number-2">2.</span> Test run (n = 1k), OpenBabel</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgeb56122" class="outline-3">
-<h3 id="orgeb56122"><span class="section-number-3">2.1.</span> preparation</h3>
+<div id="outline-container-orgc6e7dc7" class="outline-3">
+<h3 id="orgc6e7dc7"><span class="section-number-3">2.1.</span> preparation</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 With DataWarrior's default settings, a random library of 1000 molecules was
@@ -327,7 +328,7 @@ the InChi assigned by OpenBabel and DW match (<code>1</code>) or not (<code>0</c
 This frequency count is the basis for the following table.
 </p>
 
-<table id="orgdeb9a2a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org090a7f6" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -553,8 +554,8 @@ This frequency count is the basis for the following table.
 </div>
 </div>
 
-<div id="outline-container-org423bc5c" class="outline-3">
-<h3 id="org423bc5c"><span class="section-number-3">2.2.</span> Conclusion</h3>
+<div id="outline-container-org9149d2c" class="outline-3">
+<h3 id="org9149d2c"><span class="section-number-3">2.2.</span> Conclusion</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Except for molecules lacking stereogenic centers and exocyclic double bonds,
@@ -572,8 +573,8 @@ reduce the probability of a matching InChi by both generators.
 </div>
 </div>
 
-<div id="outline-container-orgaae61ce" class="outline-2">
-<h2 id="orgaae61ce"><span class="section-number-2">3.</span> Test run (n = 5k), OpenBabel</h2>
+<div id="outline-container-org76a35eb" class="outline-2">
+<h2 id="org76a35eb"><span class="section-number-2">3.</span> Test run (n = 5k), OpenBabel</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This test departed from a random library of 5000 molecules deposit in file
@@ -581,7 +582,7 @@ This test departed from a random library of 5000 molecules deposit in file
 with 1k of molecules.
 </p>
 
-<table id="orgede719a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org1916990" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -898,8 +899,8 @@ is considerably larger.
 </div>
 </div>
 
-<div id="outline-container-org36cf364" class="outline-2">
-<h2 id="org36cf364"><span class="section-number-2">4.</span> Test run, (n = 1k), RDKit</h2>
+<div id="outline-container-org7934c20" class="outline-2">
+<h2 id="org7934c20"><span class="section-number-2">4.</span> Test run, (n = 1k), RDKit</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 For the purpose of comparison, the scrutiny was repeated with the currently
@@ -926,7 +927,7 @@ branch OpenBabel, script <code>table_stat.py</code> was used again to yield a su
 file <code>frequency_list.txt</code>.
 </p>
 
-<table id="org3e3e83d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org19ee696" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1159,15 +1160,15 @@ other in absence of stereogenic centers and E/Z double bonds.
 </div>
 
 
-<div id="outline-container-org03f9cec" class="outline-2">
-<h2 id="org03f9cec"><span class="section-number-2">5.</span> Test run, (n = 5k), RDKit</h2>
+<div id="outline-container-orge6f15a7" class="outline-2">
+<h2 id="orge6f15a7"><span class="section-number-2">5.</span> Test run, (n = 5k), RDKit</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 The library of 5k drug like molecules, submitted to the scrutiny as .sdf by
 RDKit.
 </p>
 
-<table id="org8d181ce" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf133573" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1483,8 +1484,8 @@ over the total of all molecules submitted is higher than in the earlier run (n
 </div>
 </div>
 
-<div id="outline-container-org50cb3e2" class="outline-2">
-<h2 id="org50cb3e2"><span class="section-number-2">6.</span> Single molecule</h2>
+<div id="outline-container-orgfa8ad6e" class="outline-2">
+<h2 id="orgfa8ad6e"><span class="section-number-2">6.</span> Single molecule</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 In a pristine instance of DW, one early entry of the set of 1000 molecules
@@ -1505,8 +1506,8 @@ assigned: <a href="https://cactus.nci.nih.gov/chemical/structure/InChI=1S/C14H12
 </div>
 
 
-<div id="outline-container-org9c62286" class="outline-2">
-<h2 id="org9c62286"><span class="section-number-2">7.</span> Cross-check InChI trust reference</h2>
+<div id="outline-container-orge780ba7" class="outline-2">
+<h2 id="orge780ba7"><span class="section-number-2">7.</span> Cross-check InChI trust reference</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 For the assignment of molecular structures encoded as a <code>.sdf</code>, the InChI
@@ -1515,7 +1516,7 @@ InChIKeys as a compiled executable, e.g., for Linux.  Both test sets of 1k and
 5k molecules were submitted to this assignment.
 </p>
 
-<table id="org82c9093" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org634b76e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior <i>vs.</i> InChI; 1k set.</caption>
 
 <colgroup>
@@ -1588,7 +1589,7 @@ InChIKeys as a compiled executable, e.g., for Linux.  Both test sets of 1k and
 </table>
 
 
-<table id="orgc1563b4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org6c647b5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 2:</span> Difference analysis for the assignments by OpenBabel, RDKit, DataWarrior <i>vs.</i> InChI; 5k set.</caption>
 
 <colgroup>
@@ -1681,10 +1682,125 @@ different assignment).</li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-orgc16b2b3" class="outline-2">
+<h2 id="orgc16b2b3"><span class="section-number-2">8.</span> Cross-check with the InChI trust reference, b</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Based on commit <code>fa3b7a4</code> on Monday afternoon, 2021-09-20, Thomas Sander
+released a Linux development version of DW correcting most of the problems
+about the assignment of InChI and InChIKeys faced earlier.
+</p>
+
+<p>
+The same sets of 1k and 5k drug-like molecules were submitted to the
+assignment of InChI and InChIKey by DataWarrior.  These were compared against
+the reference executable for Linux, as distributed by the InChI trust (version
+1.06, december 2020).  In comparison to DataWarrior as met on September 7, the
+improvement is substantial; the rate of differences is about one order of
+magnitude below the one seen for the analogue comparison between RDKit against
+the InChI trust reference:
+</p>
+
+<table id="orgb2a2ea0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 3:</span> Difference count for InChI and InChIKey assigned by DataWarrior vs. InChI trust, 1k set.</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right"><code>diff_inchi_dw_inchi</code></th>
+<th scope="col" class="org-right"><code>inchikey_dw_vs_inchi</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">count (match):</td>
+<td class="org-right">998</td>
+<td class="org-right">998</td>
+</tr>
+
+<tr>
+<td class="org-left">count (differ):</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">sum (match+differ):</td>
+<td class="org-right">1000</td>
+<td class="org-right">1000</td>
+</tr>
+
+<tr>
+<td class="org-left">difference [\%]</td>
+<td class="org-right">0.20</td>
+<td class="org-right">0.20</td>
+</tr>
+</tbody>
+</table>
+
+<table id="org0b1345b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 4:</span> Difference count for InChI and InChIKey assigned by DataWarrior vs. InChI trust, 5k set.</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right"><code>diff_inchi_dwb_inchi</code></th>
+<th scope="col" class="org-right"><code>inchikey_dw_vs_inchi</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">count (match):</td>
+<td class="org-right">4989</td>
+<td class="org-right">4989</td>
+</tr>
+
+<tr>
+<td class="org-left">count (differ):</td>
+<td class="org-right">11</td>
+<td class="org-right">11</td>
+</tr>
+
+<tr>
+<td class="org-left">sum (match+differ):</td>
+<td class="org-right">5000</td>
+<td class="org-right">5000</td>
+</tr>
+
+<tr>
+<td class="org-left">difference [\%]</td>
+<td class="org-right">0.22</td>
+<td class="org-right">0.22</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+As already recognized by Thomas, the (E)/(Z) configuration of oximes still
+represents a potential pitfall for the assignment of InChI.  This is going to
+be a different case.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: norwid</p>
-<p class="date">Created: 2021-09-17 Fri 10:10</p>
+<p class="date">Created: 2021-09-20 Mon 16:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

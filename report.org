@@ -355,3 +355,41 @@
     5k entries with different assigment), and again by a factor of about 50
     using the current version of RDKit (2021.03.5, 2 out of 5k entries with
     different assignment).
+
+* Cross-check with the InChI trust reference, b
+
+  Based on commit =fa3b7a4= on Monday afternoon, 2021-09-20, Thomas Sander
+  released a Linux development version of DW correcting most of the problems
+  about the assignment of InChI and InChIKeys faced earlier.
+
+  The same sets of 1k and 5k drug-like molecules were submitted to the
+  assignment of InChI and InChIKey by DataWarrior.  These were compared against
+  the reference executable for Linux, as distributed by the InChI trust (version
+  1.06, december 2020).  In comparison to DataWarrior as met on September 7, the
+  improvement is substantial; the rate of differences now is about the order of
+  magnitude as observed for the analogue comparison between RDKit against the
+  InChI trust reference:
+
+  #+NAME:  tab_new_DW_vs_InChItrust_1k
+  #+CAPTION: Difference count for InChI and InChIKey assigned by DataWarrior vs. InChI trust, 1k set.
+  |                     | =diff_inchi_dw_inchi= | =inchikey_dw_vs_inchi= |
+  |---------------------+-----------------------+------------------------|
+  | count (match):      |                   998 |                    998 |
+  | count (differ):     |                     2 |                      2 |
+  | sum (match+differ): |                  1000 |                   1000 |
+  | difference [%]      |                  0.20 |                   0.20 |
+  |---------------------+-----------------------+------------------------|
+
+  #+NAME:  tab_new_DW_vs_InChItrust_1k
+  #+CAPTION: Difference count for InChI and InChIKey assigned by DataWarrior vs. InChI trust, 5k set.
+  |                     | =diff_inchi_dwb_inchi= | =inchikey_dw_vs_inchi= |
+  |---------------------+------------------------+------------------------|
+  | count (match):      |                   4989 |                   4989 |
+  | count (differ):     |                     11 |                     11 |
+  | sum (match+differ): |                   5000 |                   5000 |
+  | difference [%]      |                   0.22 |                   0.22 |
+  |---------------------+------------------------+------------------------|
+
+  As already recognized by Thomas, the (E)/(Z) configuration of oximes still
+  represents a potential pitfall for the assignment of InChI.  This is going to
+  be a different case.
